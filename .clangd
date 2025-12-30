@@ -1,0 +1,32 @@
+CompileFlags:
+  Add: 
+    - -m32
+    - -fno-pic 
+    - -static
+    - -fno-builtin
+    - -fno-strict-aliasing
+    - -Wall
+    - -ggdb
+    - -fno-omit-frame-pointer
+    - -fno-stack-protector
+    - -fno-pie
+    - -no-pie
+    - -I.
+    - --target=i386-pc-linux-gnu
+  Remove: 
+    - -Werror
+Diagnostics:
+  ClangTidy:
+    Add: []
+    Remove: 
+      - readability-*
+      - modernize-*
+      - cppcoreguidelines-*
+      - bugprone-easily-swappable-parameters
+  UnusedIncludes: Strict
+  Suppress: ['pp_file_not_found']
+Index:
+  Background: Build
+  StandardLibrary: No
+Completion:
+  AllScopes: Yes
